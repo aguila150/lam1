@@ -21,7 +21,7 @@ export function SectionHeading({
       <p
         className={cn(
           "inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.22em]",
-          dark ? "text-volt" : "text-navy-2",
+          dark ? "text-white/70" : "text-navy-2",
         )}
       >
         <span className="h-0.5 w-6 rounded-full bg-volt" aria-hidden="true" />

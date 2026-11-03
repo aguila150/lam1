@@ -44,7 +44,7 @@ export function About() {
           </div>
           <div className="absolute right-4 top-6 rounded-2xl border border-white/10 bg-navy/85 px-5 py-4 backdrop-blur sm:-right-6">
             <p className="font-heading text-lg font-extrabold">Luis</p>
-            <p className="text-xs font-medium uppercase tracking-wider text-volt">Técnico a cargo</p>
+            <p className="text-xs font-medium uppercase tracking-wider text-white/70">Técnico a cargo</p>
           </div>
         </Reveal>
 

@@ -1,5 +1,4 @@
 import { MessageCircle, Phone } from "lucide-react"
-import { BulbM } from "@/components/lam/logo"
 import { Reveal } from "@/components/lam/reveal"
 import { CONTACT, whatsappLink } from "@/lib/site-config"
 
@@ -8,15 +7,12 @@ export function ContactCTA() {
     <section id="contacto" aria-labelledby="contacto-title" className="bg-white px-5 pb-20 sm:px-8 sm:pb-28">
       <Reveal className="relative isolate mx-auto max-w-6xl overflow-hidden rounded-[2rem] bg-navy px-6 py-16 text-center text-white sm:px-12 sm:py-24">
         <div className="bg-grid absolute inset-0 -z-10 [mask-image:radial-gradient(ellipse_at_center,black_10%,transparent_70%)]" />
-        <BulbM
-          className="absolute -bottom-16 -right-10 -z-10 h-72 text-volt opacity-[0.07] sm:h-96"
-        />
         <div
           className="absolute left-1/2 top-0 -z-10 h-40 w-2/3 -translate-x-1/2 rounded-full bg-volt/15 blur-3xl"
           aria-hidden="true"
         />
 
-        <p className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.22em] text-volt">
+        <p className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.22em] text-white/70">
           <span className="h-0.5 w-6 rounded-full bg-volt" aria-hidden="true" />
           Contacto
           <span className="h-0.5 w-6 rounded-full bg-volt" aria-hidden="true" />
@@ -25,7 +21,7 @@ export function ContactCTA() {
           id="contacto-title"
           className="mx-auto mt-5 max-w-3xl text-4xl font-extrabold leading-[1.08] tracking-tight sm:text-6xl"
         >
-          ¿Necesitás una solución para tu <span className="text-volt">hogar</span>?
+          ¿Necesitás una solución para tu hogar?
         </h2>
         <p className="mx-auto mt-6 max-w-xl text-pretty text-lg text-white/75">
           Contactanos y recibí asesoramiento para encontrar la mejor solución para tu necesidad.

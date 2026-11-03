@@ -23,7 +23,7 @@ export function Hero() {
 
       <div className="mx-auto grid max-w-7xl items-center gap-12 px-5 pb-20 pt-12 sm:px-8 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16 lg:pb-28 lg:pt-20">
         <div>
-          <p className="inline-flex items-center gap-2 rounded-full border border-volt/30 bg-volt/10 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.2em] text-volt">
+          <p className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.2em] text-white/90">
             <Zap className="size-3.5 fill-volt" aria-hidden="true" />
             30 años de experiencia
           </p>
@@ -32,18 +32,7 @@ export function Hero() {
             id="hero-title"
             className="mt-6 text-[2.6rem] font-extrabold leading-[1.04] tracking-tight sm:text-6xl lg:text-[4.25rem]"
           >
-            Soluciones <span className="text-volt">eléctricas</span> y mantenimiento para tu{" "}
-            <span className="relative inline-block text-volt">
-              hogar.
-              <svg
-                className="absolute -bottom-2 left-0 h-3 w-full text-volt/70"
-                viewBox="0 0 200 12"
-                preserveAspectRatio="none"
-                aria-hidden="true"
-              >
-                <path d="M2 9C50 3 150 3 198 7" stroke="currentColor" strokeWidth="4" fill="none" strokeLinecap="round" />
-              </svg>
-            </span>
+            Soluciones eléctricas y mantenimiento para tu hogar.
           </h1>
 
           <p className="mt-7 max-w-xl text-pretty text-lg leading-relaxed text-white/75">

@@ -11,6 +11,19 @@
  */
 export const WHATSAPP_NUMBER = "5491130972850"
 
+/**
+ * LOGOTIPO ORIGINAL DE LAM
+ * 1. Guardá el archivo en /public/images (ej: /public/images/logo-lam.png, idealmente PNG transparente o SVG).
+ * 2. Completá `src` con su ruta y ajustá `width`/`height` a las proporciones reales del archivo.
+ * Mientras `src` sea null se muestra el texto "LAM" en blanco.
+ */
+export const LOGO = {
+  src: null as string | null,
+  width: 160,
+  height: 48,
+  alt: "LAM Servicios",
+}
+
 export const CONTACT = {
   /** Teléfono tal como se muestra en pantalla */
   phoneDisplay: "+54 9 11 3097-2850",

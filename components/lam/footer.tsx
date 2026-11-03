@@ -31,7 +31,7 @@ export function Footer() {
         </div>
 
         <nav aria-label="Enlaces del pie de página">
-          <h2 className="text-sm font-bold uppercase tracking-[0.18em] text-volt">Secciones</h2>
+          <h2 className="text-sm font-bold uppercase tracking-[0.18em] text-white">Secciones</h2>
           <ul className="mt-5 flex flex-col gap-3">
             {NAV_LINKS.map((link) => (
               <li key={link.href}>
@@ -44,7 +44,7 @@ export function Footer() {
         </nav>
 
         <div>
-          <h2 className="text-sm font-bold uppercase tracking-[0.18em] text-volt">Servicios</h2>
+          <h2 className="text-sm font-bold uppercase tracking-[0.18em] text-white">Servicios</h2>
           <ul className="mt-5 flex flex-col gap-3">
             {services.map((s) => (
               <li key={s}>
@@ -57,7 +57,7 @@ export function Footer() {
         </div>
 
         <div>
-          <h2 className="text-sm font-bold uppercase tracking-[0.18em] text-volt">Contacto</h2>
+          <h2 className="text-sm font-bold uppercase tracking-[0.18em] text-white">Contacto</h2>
           <ul className="mt-5 flex flex-col gap-4">
             {contactItems.map(({ icon: Icon, label, value, href, external }) => {
               const content = (
