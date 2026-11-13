@@ -40,6 +40,7 @@ export default function AdminPage() {
   const [section, setSection] = useState<string>("Resumen")
   const [mobileOpen, setMobileOpen] = useState(false)
   const [loading, setLoading] = useState(true)
+  const [authorized, setAuthorized] = useState(false)
   const [busy, setBusy] = useState(false)
   const [error, setError] = useState("")
   const [notice, setNotice] = useState("")
@@ -67,6 +68,7 @@ export default function AdminPage() {
     try {
       const me = await api("/api/auth/me")
       if (!me?.authenticated) throw new Error("SESSION")
+      setAuthorized(true)  
       const paths = ["clientes", "solicitudes", "disponibilidad", "presupuestos", "trabajos", "historial"]
       const results = await Promise.all(paths.map(async p => [p, await api(`/api/admin/${p}`)] as const))
       setData(Object.fromEntries(results))
@@ -107,7 +109,49 @@ export default function AdminPage() {
   }
   const card = (label: string, value: number, note: string) => <article key={label} className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm"><p className="text-sm font-semibold text-slate-500">{label}</p><p className="mt-3 text-3xl font-extrabold">{value}</p><p className="mt-1 text-xs text-slate-500">{note}</p></article>
 
-  return <main className="min-h-screen bg-[#f3f5f8] text-[#0b1f3a]">
+    if (!authorized) {
+    return (
+      <main className="flex min-h-screen items-center justify-center bg-[#f3f5f8] px-5 text-[#0b1f3a]">
+        <div className="w-full max-w-md rounded-2xl bg-white p-8 text-center shadow-lg">
+          <h1 className="text-2xl font-extrabold">Administración LAM</h1>
+
+          {loading ? (
+            <p className="mt-4 text-slate-500">
+              Verificando acceso...
+            </p>
+          ) : (
+            <>
+              <p className="mt-4 text-sm text-red-700">
+                No se pudo verificar tu sesión. El panel permanece bloqueado.
+              </p>
+
+              {error && (
+                <p className="mt-2 text-sm text-slate-500">
+                  {error}
+                </p>
+              )}
+
+              <button
+                onClick={() => router.replace("/admin/login")}
+                className="mt-6 rounded-full bg-[#0b1f3a] px-6 py-3 font-bold text-white"
+              >
+                Ir al inicio de sesión
+              </button>
+
+              <button
+                onClick={loadAll}
+                className="ml-2 mt-6 rounded-full border border-slate-300 px-6 py-3 font-bold"
+              >
+                Reintentar
+              </button>
+            </>
+          )}
+        </div>
+      </main>
+    )
+  }
+
+return <main className="min-h-screen bg-[#f3f5f8] text-[#0b1f3a]">
     <header className="sticky top-0 z-30 flex h-16 items-center justify-between bg-[#0b1f3a] px-5 text-white shadow-lg">
       <a href="/" className="text-xl font-extrabold tracking-wide">LA<span className="text-[#ffd43b]">M</span> <span className="text-sm font-medium text-white/70">ADMIN</span></a>
       <div className="flex items-center gap-2"><button onClick={loadAll} className="rounded-lg p-2 hover:bg-white/10" title="Actualizar"><RefreshCw size={18}/></button><button onClick={logout} className="flex items-center gap-2 rounded-full border border-white/30 px-3 py-2 text-sm hover:bg-white/10"><LogOut size={16}/> Salir</button><button className="rounded-lg p-2 hover:bg-white/10 lg:hidden" onClick={()=>setMobileOpen(!mobileOpen)} aria-label="Menú">{mobileOpen?<X/>:<Menu/>}</button></div>

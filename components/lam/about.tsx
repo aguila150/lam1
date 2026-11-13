@@ -39,7 +39,8 @@ export function About() {
               alt="Retrato de un técnico electricista en su taller"
               fill
               sizes="(min-width: 1024px) 45vw, (min-width: 640px) 28rem, 90vw"
-              className="object-cover"
+              className="object-cover [object-position:center_10%]"
+              unoptimized
             />
           </div>
           <div className="absolute right-4 top-6 rounded-2xl border border-white/10 bg-navy/85 px-5 py-4 backdrop-blur sm:-right-6">

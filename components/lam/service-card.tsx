@@ -24,6 +24,7 @@ export function ServiceCard({ service }: { service: Service }) {
           fill
           sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
           className="object-cover transition-transform duration-700 group-hover:scale-105"
+          unoptimized
         />
         <div className="absolute inset-0 bg-gradient-to-t from-navy/60 via-navy/0 to-transparent" aria-hidden="true" />
         <span className="absolute right-4 top-4 rounded-full bg-navy/80 px-3 py-1 font-heading text-xs font-bold tracking-widest text-white backdrop-blur">

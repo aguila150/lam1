@@ -95,6 +95,7 @@ export function Hero() {
               priority
               sizes="(min-width: 1024px) 40vw, (min-width: 640px) 28rem, 90vw"
               className="object-cover object-top"
+              unoptimized
             />
             <div className="absolute inset-0 bg-gradient-to-t from-navy/70 via-transparent to-transparent" aria-hidden="true" />
           </div>
